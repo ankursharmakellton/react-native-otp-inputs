@@ -118,16 +118,16 @@ export default class OtpInputs extends PureComponent<Props, State> {
   private _listenOnCopiedText = async (): Promise<void> => {
     const { numberOfInputs } = this.props
     const { otpCode, previousCopiedText } = this.state
-    const copiedText = await Clipboard.getString()
+  // const copiedText = await Clipboard.getString()
 
-    if (
-      copiedText &&
-      copiedText.length === numberOfInputs &&
-      copiedText !== otpCode.join('') &&
-      copiedText !== previousCopiedText
-    ) {
-      this._handleAfterOtpAction(copiedText.split(''), numberOfInputs, true)
-    }
+  // if (
+  //   copiedText &&
+  //   copiedText.length === numberOfInputs &&
+  //   copiedText !== otpCode.join('') &&
+  //   copiedText !== previousCopiedText
+  // ) {
+  //   this._handleAfterOtpAction(copiedText.split(''), numberOfInputs, true)
+  // }
   }
 
   private _handleAfterOtpAction = (
