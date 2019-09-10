@@ -103,6 +103,11 @@ export default class OtpInputs extends PureComponent<Props, State> {
   public componentWillUnmount(): void {
     clearInterval(this._interval)
   }
+  
+  // Custom change by Kellton
+  public shiftFocus = (): void => {
+    this.inputs[0].current.focus();
+  }
 
   public reset = (): void => {
     this.setState({ otpCode: [] })
@@ -138,9 +143,10 @@ export default class OtpInputs extends PureComponent<Props, State> {
       ...(fromClipboard && { previousCopiedText: otpCode.join('') }),
     })
 
-    if (indexToFocus === numberOfInputs) {
-      return Keyboard.dismiss()
-    }
+    // For mataining the auto foucs of next field
+//     if (indexToFocus === numberOfInputs) {
+//       return Keyboard.dismiss()
+//     }
 
     if (indexToFocus >= MINIMAL_INDEX && indexToFocus < numberOfInputs) {
       this._focusInput(indexToFocus)
