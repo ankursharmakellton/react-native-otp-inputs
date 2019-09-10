@@ -1,7 +1,7 @@
 import React, { PureComponent, ReactNode, RefObject } from 'react'
 import {
-  Clipboard,
-  Keyboard,
+//   Clipboard,
+//   Keyboard,
   StyleProp,
   Text,
   TextInputChangeEventData,
